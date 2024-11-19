@@ -6,16 +6,30 @@ import {
   ScrollRestoration,
   useLoaderData,
 } from "@remix-run/react";
-import type { LinksFunction, LoaderFunctionArgs } from "@remix-run/node";
+import type {
+  LinksFunction,
+  LoaderFunctionArgs,
+  MetaFunction,
+} from "@remix-run/node";
 
 import { createConfig, SequenceKit } from "@0xsequence/kit";
 
 // Styles
 import styles from "@0xsequence/design-system/styles.css?url";
 import indexCss from "./index.css?url";
+import { GithubCorner } from "~/components/GithubCorner";
+
+export const meta: MetaFunction = () => {
+  return [
+    { title: "Sequence Embedded Wallet - Remix NodeJS Kit Starter" },
+    { description: "A Remix NodeJS starter kit for Sequence Embedded Wallet" },
+  ];
+};
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: styles },
+  { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+
   { rel: "stylesheet", href: indexCss },
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
@@ -87,6 +101,7 @@ export default function App() {
   return (
     <SequenceKit config={config}>
       <div id="root">
+        <GithubCorner to="https://github.com/0xsequence-demos/kit-embedded-wallet-remix-nodejs-boilerplate" />
         <Outlet />
       </div>
     </SequenceKit>
