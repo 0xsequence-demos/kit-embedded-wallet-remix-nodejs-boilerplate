@@ -1,40 +1,21 @@
-# Welcome to Remix!
+# Sequence Kit Embedded Wallet Remix Node.js Starter Boilerplate
 
-- 📖 [Remix docs](https://remix.run/docs)
+Starter Sequence Embedded Wallet boilerplate that uses [Sequence Kit](https://github.com/0xsequence/kit) with Remix & Node.js.
 
-## Development
+## Quickstart
 
-Run the dev server:
+Copy `.env.example` to `.env` and fill with your project information. To test things out, you can use the pre-provided keys in the `.env.example` file:
 
-```shellscript
-npm run dev
+```js
+cp .env.example .env
 ```
 
-## Deployment
+Then install and run:
 
-First, build your app for production:
-
-```sh
-npm run build
+```js
+pnpm install && pnpm dev
 ```
 
-Then run the app in production mode:
+The app will start on `localhost:4444`
 
-```sh
-npm start
-```
-
-Now you'll need to pick a host to deploy it to.
-
-### DIY
-
-If you're familiar with deploying Node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-- `build/server`
-- `build/client`
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever css framework you prefer. See the [Vite docs on css](https://vitejs.dev/guide/features.html#css) for more information.
+To provide your own keys from [Sequence Builder](https://sequence.build/), simply edit the `.env` file accordingly.
